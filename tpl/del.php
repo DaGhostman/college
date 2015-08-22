@@ -32,7 +32,7 @@
  * otherwise redirect them to the login page
  */
 if (!array_key_exists('gap-login', $_COOKIE)) {
-    header('Location: /', true);
+    header('Location: /PHP/college/', true);
     exit;
 }
 
@@ -43,9 +43,9 @@ if (!array_key_exists('gap-login', $_COOKIE)) {
  * it will show 'Record was not found'
  */
 if (true === $link->delete('students', (int) $_GET['id'])) {
-    echo '<meta http-equiv="refresh" content="3;url=/?action=view" />';
+    echo '<meta http-equiv="refresh" content="3;url=/PHP/college/?action=view" />';
     echo '<p style="color: green">Record deleted successfully</p>' . PHP_EOL;
 } else {
-    echo '<meta http-equiv="refresh" content="3;url=/?action=view" />';
+    echo '<meta http-equiv="refresh" content="3;url=/PHP/college/?action=view" />';
     echo '<p style="color: red">Record was not found</p>' . PHP_EOL;
 }

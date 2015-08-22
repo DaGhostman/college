@@ -145,7 +145,8 @@ if (array_key_exists('action', $_GET)) {
                 Copyright &copy; 2015 <a href="http://opensource.org/licenses/MIT">MIT Licensed</a> <br />
                 Developed by Dimitar Dimitrov &lt;daghostman.dimitrov@gmail.com&gt; <br />
                 <a href="https://github.com/DaGhostman">GitHub</a> |
-                <a href="http://stackoverflow.com/users/1747193/daghostman-dimitrov">StackOverflow</a>
+                <a href="http://stackoverflow.com/users/1747193/daghostman-dimitrov">StackOverflow</a> |
+                <a href="https://github.com/DaGhostman/college">Sources</a>
             </p>
         </footer>
     </body>

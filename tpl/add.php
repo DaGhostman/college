@@ -32,7 +32,7 @@
  * otherwise redirect them to the login page
  */
 if (!array_key_exists('gap-login', $_COOKIE)) {
-    header('Location: /', true);
+    header('Location: /PHP/college/', true);
     exit;
 }
 
@@ -53,7 +53,7 @@ if (array_key_exists('fname', $_POST) && array_key_exists('sname', $_POST)) {
         (int) $_POST['course']
     ]);
 
-    echo '<meta http-equiv="refresh" content="3;url=/?action=view" />';
+    echo '<meta http-equiv="refresh" content="3;url=/PHP/college/?action=view" />';
     echo '<p style="color: green">Record added successfully</p>' . PHP_EOL;
 } else {
     /*
@@ -73,7 +73,7 @@ if (array_key_exists('fname', $_POST) && array_key_exists('sname', $_POST)) {
      * The HEREDOC to be displayed with the html form
      */
     echo <<<HTML
-<form action="/?action=insert" method="post">
+<form action="/PHP/college/?action=insert" method="post">
     <label>First Name: <input type="text" name="fname" /></label><br />
     <label>Last Name: <input type="text" name="sname" /></label><br />
     <label for="course">Course</label>

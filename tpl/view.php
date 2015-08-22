@@ -28,7 +28,7 @@
  */
 
 if (!array_key_exists('gap-login', $_COOKIE)) {
-    header('Location: /', true);
+    header('Location: /PHP/college/', true);
     exit;
 }
 
@@ -52,9 +52,9 @@ if (!array_key_exists('id', $_GET)) {
     <td>{$student['firstName']}</td>
     <td>{$student['lastName']}</td>
     <td>
-        <a href="/?action=delete&id={$student['id']}">DELETE</a> |
-        <a href="/?action=view&id={$student['id']}">VIEW</a> |
-        <a href="/?action=update&id={$student['id']}"> UPDATE </a>
+        <a href="/PHP/college/?action=delete&id={$student['id']}">DELETE</a> |
+        <a href="/PHP/college/?action=view&id={$student['id']}">VIEW</a> |
+        <a href="/PHP/college/?action=update&id={$student['id']}"> UPDATE </a>
     </td>
 </tr>
 HTML;
@@ -83,7 +83,7 @@ TABLE;
     $student = $r->fetch_assoc();
 
     if ($student === null) {
-        echo '<meta http-equiv="refresh" content="3;url=/?action=view" />';
+        echo '<meta http-equiv="refresh" content="3;url=/PHP/college/?action=view" />';
         echo '<p style="color: green">Record for student with id: ' . $_GET['id'] . ' was not found</p>' . PHP_EOL;
         exit;
     }
@@ -103,8 +103,8 @@ TABLE;
         <td>Course</td><td>{$student['title']}</td>
     </tr>
     <tr>
-        <td> <a href="/?action=delete&id={$student['id']}" onclick="return confirm('Are you sure you want to delete this record');"> Delete </a> </td>
-        <td> <a href="/?action=update&id={$student['id']}"> Update </a> </td>
+        <td> <a href="/PHP/college/?action=delete&id={$student['id']}" onclick="return confirm('Are you sure you want to delete this record');"> Delete </a> </td>
+        <td> <a href="/PHP/college/?action=update&id={$student['id']}"> Update </a> </td>
     </tr>
 </table>
 TABLE;

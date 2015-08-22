@@ -31,7 +31,7 @@
  * If the user is logged in, there is no need to ask them to login again (retarded?)
  */
 if (array_key_exists('gap-login', $_COOKIE)) {
-    header('Location: /?action=view', true);
+    header('Location: /PHP/college/?action=view', true);
     exit;
 }
 
@@ -44,7 +44,7 @@ if (!empty($_POST)) {
 
     if ($r->fetch_assoc()['id'] !== null) {
         setcookie('gap-login', '1', strtotime('1 hour'));
-        echo '<meta http-equiv="refresh" content="0;url=/?action=view" />';
+        echo '<meta http-equiv="refresh" content="0;url=/PHP/college/?action=view" />';
     } else {
         echo '<span style="color: red">Invalid login details</span>';
     }

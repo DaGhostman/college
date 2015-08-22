@@ -28,7 +28,7 @@
  */
 
 if (!array_key_exists('gap-login', $_COOKIE)) {
-    header('Location: /', true);
+    header('Location: /PHP/college', true);
     exit;
 }
 
@@ -60,7 +60,7 @@ if (array_key_exists('id', $_GET) && !empty($_POST)) {
     }
 
     echo <<<HTML
-<form action="/?action=update&id={$_GET['id']}" method="post" onsubmit="return confirm('Are you sure you want to save the changes?');">
+<form action="/PHP/college/?action=update&id={$_GET['id']}" method="post" onsubmit="return confirm('Are you sure you want to save the changes?');">
 <label for="id">ID: </label><br /><input id="id" name="id" type="number" value="{$student['id']}" /><br />
 <label for="name">First Name: </label><br /><input id="name" name="firstName" type="text" value="{$student['firstName']}" /><br />
 <label for="surname">Last Name: </label><br /><input id="surname" name="lastName" type="text" value="{$student['lastName']}" /><br />

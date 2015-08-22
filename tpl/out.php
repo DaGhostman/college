@@ -32,6 +32,6 @@
  */
 if (array_key_exists('gap-login', $_COOKIE)) {
     setcookie('gap-login', null, strtotime('-365 days'));
-    header('Location: /', true);
+    header('Location: /PHP/college/', true);
     exit;
 }
