@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS ghostApp DEFAULT COLLATE 'UTF8' CHARACTER SET 'utf8_general_ci';
+USE 'ghostApp';
+
+CREATE TABLE IF NOT EXISTS courses (
+  id INT(10) UNSIGNED NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+  title VARCHAR(100) NOT NULL
+) ENGINE=InnoDB;
+
+INSERT INTO courses VALUES (1, 'Computer Systems'), (2, 'Machine Learning');
+
+CREATE TABLE IF NOT EXISTS students (
+id INT(10) UNSIGNED NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+firstName VARCHAR(100) NOT NULL,
+lastName VARCHAR(100) NOT NULL,
+course INT(10) UNSIGNED NOT NULL,
+UNIQUE INDEX names_ndx (firstName(75), lastName(75))
+) ENGINE=InnoDB;
+
+
+INSERT INTO students VALUES (1, 'Jon', 'Conner', 1), (2, 'Obi', 'Wan.', 2), (3, 'Mr.', 'Smith', 1);
+
+
+CREATE TABLE IF NOT EXISTS credentials (
+  id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(100) NOT NULL,
+  secret VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
+
+INSERT INTO credentials VALUES (1, 'teacher', MD5('password'));
